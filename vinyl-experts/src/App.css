@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.carousel-css{
+  max-height: max-content;
+  max-width: max-content;
+  margin: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
