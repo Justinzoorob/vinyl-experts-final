@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vinyl-experts-final/static/css/main.2dfdb2ba.css",
-    "main.js": "/vinyl-experts-final/static/js/main.115f1f8b.js",
+    "main.js": "/vinyl-experts-final/static/js/main.e6cbceb9.js",
     "static/js/787.13f04ab8.chunk.js": "/vinyl-experts-final/static/js/787.13f04ab8.chunk.js",
     "static/media/ferrari-bg.jpg": "/vinyl-experts-final/static/media/ferrari-bg.d38a93745b249938d4c5.jpg",
     "static/media/bootstrap-icons.woff?": "/vinyl-experts-final/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
@@ -15,11 +15,11 @@
     "static/media/Vinyl Experts-logos_black.png": "/vinyl-experts-final/static/media/Vinyl Experts-logos_black.5b10a6386deccb1d42fa.png",
     "index.html": "/vinyl-experts-final/index.html",
     "main.2dfdb2ba.css.map": "/vinyl-experts-final/static/css/main.2dfdb2ba.css.map",
-    "main.115f1f8b.js.map": "/vinyl-experts-final/static/js/main.115f1f8b.js.map",
+    "main.e6cbceb9.js.map": "/vinyl-experts-final/static/js/main.e6cbceb9.js.map",
     "787.13f04ab8.chunk.js.map": "/vinyl-experts-final/static/js/787.13f04ab8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2dfdb2ba.css",
-    "static/js/main.115f1f8b.js"
+    "static/js/main.e6cbceb9.js"
   ]
 }
