@@ -9,6 +9,7 @@ import aboutUsimg from './assets/porsche-bg.jpg'
 import ppf from './assets/ppf.jpg'
 import windowtint from './assets/windowtint.jpg'
 import wrap from './assets/vinylwrap.jpg'
+import colors from './assets/wrapcolors.jpg'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -26,6 +27,18 @@ function App() {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+
+  const handleClickModal = event => {
+    modal.style.display = "block";
+    modalImg.src = colors;
+  }
+
+  const handleClickSpan = event => {
+    modal.style.display = "none";
+  }
 
   const popover_ppf = (
     <Popover id="popover-basic">
@@ -154,6 +167,20 @@ function App() {
                 </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
+
+            <div className="row my-5 g-5 justify-content-center align-items-center container-fluid">
+              <div className="col-6 col-lg-4">
+                <h2 className="display-4 mt-3 text-white">Pick a color or style from our 3M catalogue.</h2>
+                <p className='lead text-secondary'>We are the leaders in Ottawa car wrap</p>
+              </div>
+              <div className="col-6 col-lg-4">
+                <img src={colors} className="img-fluid" id="colors" onClick={handleClickModal}></img>
+                <div id="myModal" className="image-modal">
+                  <span className="close" onClick={handleClickSpan}>&times;</span>
+                  <img className="image-modal-content" id="img01"></img>
+                </div>
+              </div>
+            </div>
 
             <div className='mb-5 text-dark'>.</div>
           </div>
