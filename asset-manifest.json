@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/vinyl-experts-final/static/css/main.461067b5.css",
-    "main.js": "/vinyl-experts-final/static/js/main.5d519214.js",
+    "main.css": "/vinyl-experts-final/static/css/main.2dfdb2ba.css",
+    "main.js": "/vinyl-experts-final/static/js/main.b2a60895.js",
     "static/js/787.13f04ab8.chunk.js": "/vinyl-experts-final/static/js/787.13f04ab8.chunk.js",
     "static/media/ferrari-bg.jpg": "/vinyl-experts-final/static/media/ferrari-bg.d38a93745b249938d4c5.jpg",
+    "static/media/bootstrap-icons.woff?": "/vinyl-experts-final/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
+    "static/media/bootstrap-icons.woff2?": "/vinyl-experts-final/static/media/bootstrap-icons.ea98e12d2d58747f9fc5.woff2",
     "static/media/ppf.jpg": "/vinyl-experts-final/static/media/ppf.f8a1d76858a1fae8d66b.jpg",
     "static/media/windowtint.jpg": "/vinyl-experts-final/static/media/windowtint.2b7dea13e5c627bf3d00.jpg",
+    "static/media/wrapcolors.jpg": "/vinyl-experts-final/static/media/wrapcolors.1bd86a987ed959ca03be.jpg",
     "static/media/vinylwrap.jpg": "/vinyl-experts-final/static/media/vinylwrap.57c308053dd307950ab6.jpg",
     "static/media/porsche-bg.jpg": "/vinyl-experts-final/static/media/porsche-bg.2064a702e2ec05ca5471.jpg",
     "static/media/Vinyl Experts-logos.jpeg": "/vinyl-experts-final/static/media/Vinyl Experts-logos.4f6538a79253323786ac.jpeg",
     "static/media/Vinyl Experts-logos_black.png": "/vinyl-experts-final/static/media/Vinyl Experts-logos_black.5b10a6386deccb1d42fa.png",
     "index.html": "/vinyl-experts-final/index.html",
-    "main.461067b5.css.map": "/vinyl-experts-final/static/css/main.461067b5.css.map",
-    "main.5d519214.js.map": "/vinyl-experts-final/static/js/main.5d519214.js.map",
+    "main.2dfdb2ba.css.map": "/vinyl-experts-final/static/css/main.2dfdb2ba.css.map",
+    "main.b2a60895.js.map": "/vinyl-experts-final/static/js/main.b2a60895.js.map",
     "787.13f04ab8.chunk.js.map": "/vinyl-experts-final/static/js/787.13f04ab8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.461067b5.css",
-    "static/js/main.5d519214.js"
+    "static/css/main.2dfdb2ba.css",
+    "static/js/main.b2a60895.js"
   ]
 }
