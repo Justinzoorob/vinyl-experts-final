@@ -17,6 +17,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 function App() {
 
@@ -39,6 +40,22 @@ function App() {
   const handleClickSpan = event => {
     modal.style.display = "none";
   }
+
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      setValidated(true);
+    }
+    else{
+      if(validated === true){
+        setShow(false)
+      }
+    }
+  };
 
   const popover_ppf = (
     <Popover id="popover-basic">
@@ -236,13 +253,13 @@ function App() {
           <div className="row mt-5 g-3 justify-content-center align-items-center container-fluid">
               <div className="col-6 col-lg-4">
                 <h5>Contact Us</h5>
-                <p className='lead text-decoration-underline'>1337 Woodroof Ave, Ottawa, ON K1L 3Z4 <br></br> 613-414-2301 <br></br> vinylexperts@gmail.com</p>
+                <h6 className='text-decoration-underline'>1337 Woodroof Ave, Ottawa, ON K1L 3Z4 <br></br> 613-414-2301 <br></br> vinylexperts@gmail.com</h6>
               </div>
               <div className="col-6 col-lg-4">
                 <h5>No Project Is Too Small Or Too Big...</h5>
-                <p className="lead">We can cater to all types of projects. 
+                <h6>We can cater to all types of projects. 
                   If you're looking for something simple or super complicated,
-                  our staff has you covered.  Pickup the phone and call us today!</p>
+                  our staff has you covered.  Pickup the phone and call us today!</h6>
               </div>
           </div>
         </section>
@@ -257,24 +274,30 @@ function App() {
           <Modal.Body>
             <div className="row justify-content-center my-5">
               <div className="col-lg-9">
-                <form className="row">
+                <Form className="row" noValidate validated={validated} onSubmit={handleSubmit}>
                   <div className="col-lg-4">
                     <label for="fname" className="form-label">Nom et Prénom:</label>
-                    <div className="input-group">
+                    <div className="input-group" controlId="validationCustom01">
                       <input type="text" className="form-control" id="fname" placeholder="ex. Jean Dupont" required></input>
                       <span className="input-group-text">
                         <i className="bi bi-person-lines-fill"></i>
                       </span>
+                      <Form.Control.Feedback type="invalid">
+                        Veuillez enter votre Nom et Prénom
+                      </Form.Control.Feedback>
                     </div>
                   </div>
 
                   <div className="col-lg-5">
                     <label for="email" className="form-label">Couriel:</label>
                     <div className="input-group">
-                      <input type="email" className="form-control" id="email" placeholder="ex. JeanDupont@example.com"></input>
+                      <input type="email" className="form-control" id="email" placeholder="ex. JeanDupont@example.com" required></input>
                       <span className="input-group-text">
                         <i className="bi bi-envelope-fill"></i>
                       </span>
+                      <Form.Control.Feedback type="invalid">
+                        Veuillez entrer un Couriel valide.
+                      </Form.Control.Feedback>
                     </div>
                   </div>
                           
@@ -285,6 +308,9 @@ function App() {
                       <span className="input-group-text">
                         <i className="bi bi-phone-fill"></i>
                       </span>
+                      <Form.Control.Feedback type="invalid">
+                        Veuillez entrer votre Numéro.
+                      </Form.Control.Feedback>
                     </div>
                   </div>
 
@@ -295,16 +321,22 @@ function App() {
                       <span className="input-group-text">
                         <i className="bi bi-car-front-fill"></i>
                       </span>
+                      <Form.Control.Feedback type="invalid">
+                        S.v.p entrer la Marque et le Model de votre véhicule.
+                      </Form.Control.Feedback>
                     </div>
                   </div>
 
                   <div className="col-lg-3 mt-2">
                     <label for="service" className="form-label">Année de Fabrication:</label>
                     <div className="input-group">
-                      <input type="number" class="form-control" name="year" id="year" placeholder="ex. 2018"/>
+                      <input type="number" class="form-control" name="year" id="year" placeholder="ex. 2018" required/>
                       <span className="input-group-text">
                         <i class="bi bi-calendar-fill"></i>
                       </span>
+                      <Form.Control.Feedback type="invalid">
+                        S.v.p entrer l'Année de Fabrication de votre véhicule.
+                      </Form.Control.Feedback>
                     </div>
                   </div>
 
@@ -327,9 +359,9 @@ function App() {
 
                   <div className="mt-5 text-center">
                     <hr></hr>
-                    <button type="button" className="btn btn-danger" id="liveAlertBtn">Soumettre</button>
+                    <button type="submit" className="btn btn-danger">Soumettre</button>
                   </div>
-                </form>
+                </Form>
               </div>
             </div>
           </Modal.Body>
