@@ -53,6 +53,7 @@ function App() {
     else{
       if(validated === true){
         setShow(false)
+        alert("The Form has been Submitted.");
       }
     }
   };
@@ -161,7 +162,7 @@ function App() {
                 <img className="" src={wrap} alt="vinyl wrap"/>
                 <Carousel.Caption>
                   <OverlayTrigger trigger="hover" placement="top" overlay={popover_wrap}>
-                    <h3>Vinyl Vehicle Wrapping</h3>
+                    <h3><a className="text-white" href="https://www.youtube.com/watch?v=qfz4DDYSeJk" target="_blank">Vinyl Vehicle Wrapping</a></h3>
                   </OverlayTrigger>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -170,7 +171,7 @@ function App() {
                 <img className="" src={ppf} alt="protective film"/>
                 <Carousel.Caption>
                   <OverlayTrigger trigger="hover" placement="top" overlay={popover_ppf}>
-                    <h3>Protective Film</h3>
+                    <h3><a className="text-white" href="https://www.youtube.com/watch?v=ueU2Je40O-k" target="_blank">Protective Film</a></h3>
                   </OverlayTrigger>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -179,7 +180,7 @@ function App() {
                 <img className="" src={windowtint} alt="window tint"/>
                 <Carousel.Caption>
                   <OverlayTrigger trigger="hover" placement="top" overlay={popover_tint}>
-                    <h3>Window Tinting</h3>
+                    <h3><a className="text-white" href="https://www.youtube.com/watch?v=bCKiX-vZif4" target="_blank">Window Tinting</a></h3>
                   </OverlayTrigger>
                 </Carousel.Caption>
               </Carousel.Item>
