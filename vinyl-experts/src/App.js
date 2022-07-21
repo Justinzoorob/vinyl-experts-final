@@ -11,13 +11,17 @@ import windowtint from './assets/windowtint.jpg'
 import wrap from './assets/vinylwrap.jpg'
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import Carousel from 'react-bootstrap/Carousel';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
+import Modal from 'react-bootstrap/Modal';
 
 function App() {
 
   const [index, setIndex] = useState(0);
+
+  const [show, setShow] = useState(false);
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
@@ -76,7 +80,7 @@ function App() {
                           <a href="#bundles" className="nav-link text-light">Bundles</a>
                       </li>
                       <li className="nav-item ms-2 d-none d-md-inline">
-                          <a href="#quote" className="btn btn-danger text-light">Free Quote</a>
+                          <a href="#quote" className="btn btn-danger text-light" onClick={() => setShow(true)}>Free Quote</a>
                       </li>
                   </ul>
               </div>
@@ -167,10 +171,10 @@ function App() {
               <div className="col-8 col-lg-4 col-xl-3">
                 <div className="card">
                   <div className="card-body text-center py-4">
-                    <h4 className="card-title display-5">Color Change</h4>
+                    <h4 className="card-title display-5">Change Her Up</h4>
                     <p className="lead card-subtitle">Services Included...</p>
                     <p className="display-6 my-4 text-danger fw-bold">Vinyl Wrap, <br></br> Window Tints</p>
-                    <a href="#quote" className="btn btn-outline-danger">Free Quote</a>
+                    <a href="#quote" className="btn btn-outline-danger" onClick={() => setShow(true)}>Free Quote</a>
                   </div>
                 </div>
               </div>
@@ -181,7 +185,7 @@ function App() {
                     <h4 className="card-title display-5">Full Tint</h4>
                     <p className="lead card-subtitle">Services Included...</p>
                     <p className="display-6 my-4 text-danger fw-bold">Window Tints, <br></br> Headlight Tints</p>
-                    <a href="#quote" className="btn btn-outline-danger">Free Quote</a>
+                    <a href="#quote" className="btn btn-outline-danger" onClick={() => setShow(true)}>Free Quote</a>
                   </div>
                 </div>
               </div>
@@ -192,7 +196,7 @@ function App() {
                     <h4 className="card-title display-5">Protect Her</h4>
                       <p className="lead card-subtitle">Services Included...</p>
                       <p className="display-6 my-4 text-danger fw-bold">Protective Film, <br></br> Window Tints</p>
-                      <a href="#quote" className="btn btn-outline-danger">Free Quote</a>
+                      <a href="#quote" className="btn btn-outline-danger" onClick={() => setShow(true)}>Free Quote</a>
                     </div>
                   </div>
                 </div>
@@ -205,7 +209,7 @@ function App() {
           <div className="row mt-5 g-3 justify-content-center align-items-center container-fluid">
               <div className="col-6 col-lg-4">
                 <h5>Contact Us</h5>
-                <p className='lead'>1337 Woodroof Ave, Ottawa, ON K1L 3Z4 <br></br> 613-414-2301 <br></br> vinylexperts@gmail.com</p>
+                <p className='lead text-decoration-underline'>1337 Woodroof Ave, Ottawa, ON K1L 3Z4 <br></br> 613-414-2301 <br></br> vinylexperts@gmail.com</p>
               </div>
               <div className="col-6 col-lg-4">
                 <h5>No Project Is Too Small Or Too Big...</h5>
@@ -215,6 +219,94 @@ function App() {
               </div>
           </div>
         </section>
+
+        {/* Free Quote Modal */}
+        <Modal size="xl" centered show={show} onHide={() => setShow(false)} aria-labelledby="example-custom-modal-styling-title">
+          <Modal.Header closeButton>
+            <Modal.Title id="example-custom-modal-styling-title">
+              Inscrivez-vous pour une Citation <strong>GRATUITE</strong>.
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="row justify-content-center my-5">
+              <div className="col-lg-9">
+                <form className="row">
+                  <div className="col-lg-4">
+                    <label for="fname" className="form-label">Nom et Prénom:</label>
+                    <div className="input-group">
+                      <input type="text" className="form-control" id="fname" placeholder="ex. Jean Dupont" required></input>
+                      <span className="input-group-text">
+                        <i className="bi bi-person-lines-fill"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-5">
+                    <label for="email" className="form-label">Couriel:</label>
+                    <div className="input-group">
+                      <input type="email" className="form-control" id="email" placeholder="ex. JeanDupont@example.com"></input>
+                      <span className="input-group-text">
+                        <i className="bi bi-envelope-fill"></i>
+                      </span>
+                    </div>
+                  </div>
+                          
+                  <div className="col-lg-3">
+                    <label for="phone" className="form-label">Numéro de Téléphone:</label>
+                    <div className="input-group">
+                      <input type="number " className="form-control" id="phone" placeholder="ex. 6137891234" required></input>
+                      <span className="input-group-text">
+                        <i className="bi bi-phone-fill"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-5 mt-2">
+                    <label for="expert" className="form-label">Marque et Modèle:</label>
+                    <div className="input-group">
+                      <input type="text" className="form-control" id="car" placeholder="ex. Ford F-150" required></input>
+                      <span className="input-group-text">
+                        <i className="bi bi-car-front-fill"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-3 mt-2">
+                    <label for="service" className="form-label">Année de Fabrication:</label>
+                    <div className="input-group">
+                      <input type="number" class="form-control" name="year" id="year" placeholder="ex. 2018"/>
+                      <span className="input-group-text">
+                        <i class="bi bi-calendar-fill"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 mt-2">
+                    <label for="service" class="form-label">Service ou Forfait:</label>
+                      <div class="input-group">
+                        <select class="form-select" id="service" required>
+                          <option value="vinylwrap">Habillage de Vinyle</option>
+                          <option value="film">Film Protecteur</option>
+                          <option value="tint">Fenêtre Teinte</option>
+                          <option value="changeHerUp">Changez-la</option>
+                          <option value="fullTint">Pleine Teinte</option>
+                          <option value="protect">Protège-la</option>
+                        </select>
+                        <span class="input-group-text">
+                          <i class="bi bi-box-seam-fill"></i>
+                        </span>
+                      </div>
+                    </div>
+
+                  <div className="mt-5 text-center">
+                    <hr></hr>
+                    <button type="button" className="btn btn-danger" id="liveAlertBtn">Soumettre</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
 
       </header>
     </div>
